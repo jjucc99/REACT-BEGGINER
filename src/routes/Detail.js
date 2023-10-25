@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const printDetail = (detail) => {
+const PrintDetail = (detail) => {
   return (
     <div>
       <img src={detail.medium_cover_image} alt={detail.title}></img>
@@ -12,12 +12,6 @@ const printDetail = (detail) => {
       <div>
         <p>{detail.description_full}</p>
       </div>
-      <hr />
-      <ul>
-        {detail.genres.map((g) => (
-          <li key={g}>{g}</li>
-        ))}
-      </ul>
     </div>
   );
 };
@@ -40,6 +34,6 @@ function GetDetail() {
 function Detail() {
   const detail = GetDetail();
   console.log(detail);
-  return <h1>{printDetail(detail)}</h1>;
+  return <h1>{PrintDetail(detail)}</h1>;
 }
 export default Detail;
